@@ -8,3 +8,9 @@ What type of resources exist in your app? Create a separate table for each of th
 
 Features that seem to indicate a relationship or ownership between two types of resources need to be reflected in our 
 table design.
+
+## One-to-Many Relationship
+A user has many photos ("has many")
+
+## Many-to-One Relationship
+A photo has one user ("has one")
