@@ -19,3 +19,10 @@ VALUES
 -- Select
 SELECT * from cities;
 SELECT name, country FROM cities;
+
+-- Calculated column
+SELECT
+  name,
+  country,
+  (population / area) AS population_density
+FROM cities;
