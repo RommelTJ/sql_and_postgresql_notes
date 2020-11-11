@@ -27,3 +27,12 @@ Math Operators:
 @ -> Absolute Value  
 % -> Remainder
 ```  
+
+String Operators:
+```
+|| -> Join two strings
+CONCAT() -> Join two strings
+LOWER() -> Gives a lower case string
+LENGTH() -> Gives number of characters in string
+UPPER() -> Gives an upper case string
+```

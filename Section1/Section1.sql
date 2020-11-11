@@ -26,3 +26,15 @@ SELECT
   country,
   (population / area) AS population_density
 FROM cities;
+
+-- String Operators and Functions
+SELECT (name || ', ' || country) AS location FROM cities;
+SELECT CONCAT(name, ', ', country) AS location FROM cities;
+SELECT
+  CONCAT(UPPER(name), ', ', UPPER(country)) AS location
+FROM
+  cities;
+SELECT
+  LOWER(CONCAT(name, ', ', country)) AS location
+from
+  cities;
