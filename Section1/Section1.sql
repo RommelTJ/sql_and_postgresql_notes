@@ -18,3 +18,4 @@ VALUES
 
 -- Select
 SELECT * from cities;
+SELECT name, country FROM cities;
