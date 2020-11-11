@@ -5,3 +5,7 @@ CREATE TABLE cities (
   population INTEGER,
   area INTEGER
 );
+
+-- Inserting
+INSERT INTO cities (name, country, population, area)
+VALUES ('Tokyo', 'Japan', 38505000, 8223);
