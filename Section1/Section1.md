@@ -9,3 +9,7 @@ A table is a collection of records.
 A column records one property about a 'thing'.
 
 A row represents a record, i.e. the 'thing'.
+
+Keywords tell the database that we want to do something. 
+
+Identifiers tell the database what the thing we want to act on.
