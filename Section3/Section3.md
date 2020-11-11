@@ -14,3 +14,6 @@ A user has many photos ("has many")
 
 ## Many-to-One Relationship
 A photo has one user ("has one")
+
+## One-to-One Relationship
+A company has a CEO ("has a")
