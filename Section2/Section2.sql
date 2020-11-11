@@ -33,3 +33,11 @@ FROM
 WHERE
   area NOT IN (3043, 8223)
   OR name = 'Delhi';
+
+-- Calculations in "Where" Clauses
+SELECT
+    name,
+    country,
+    (population / area) AS population_density
+FROM cities
+WHERE population / area > 6000;
