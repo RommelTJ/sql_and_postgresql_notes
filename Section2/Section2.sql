@@ -44,3 +44,6 @@ WHERE population / area > 6000;
 
 -- Updating Rows
 UPDATE cities SET population = 39505000 WHERE name = 'Tokyo';
+
+-- Deleting Rows
+DELETE FROM cities WHERE name = 'Tokyo';
