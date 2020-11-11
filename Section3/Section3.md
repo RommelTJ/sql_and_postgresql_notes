@@ -17,3 +17,6 @@ A photo has one user ("has one")
 
 ## One-to-One Relationship
 A company has a CEO ("has a")
+
+## Many-to-Many Relationship
+A student has many classes. Classes have many students. ("has many" / "have many")
