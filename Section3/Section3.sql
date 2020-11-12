@@ -29,3 +29,5 @@ VALUES
 -- Find all photos from user with id 4
 SELECT * FROM photos WHERE user_id = 4;
 
+-- List all photos with details about the associated user for each
+SELECT * FROM photos JOIN users ON users.id = photos.user_id;
