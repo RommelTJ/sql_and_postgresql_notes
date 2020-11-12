@@ -25,3 +25,7 @@ VALUES
        ('http://five.jpg', 2),
        ('http://six.jpg', 3),
        ('http://seven.jpg', 4);
+
+-- Find all photos from user with id 4
+SELECT * FROM photos WHERE user_id = 4;
+
