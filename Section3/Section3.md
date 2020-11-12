@@ -20,3 +20,9 @@ A company has a CEO ("has a")
 
 ## Many-to-Many Relationship
 A student has many classes. Classes have many students. ("has many" / "have many")
+
+## Primary Key
+Uniquely identifies this record in this table.
+
+## Foreign Key
+Identifies a record (usually in another table) that this row is associate with.
