@@ -26,3 +26,7 @@ Uniquely identifies this record in this table.
 
 ## Foreign Key
 Identifies a record (usually in another table) that this row is associate with.
+
+Example: 
+A Photo has many comments, so the comments get a foreign key column pointing at a photo.  
+A User has many comments, so the comments get a foreign key column pointing to a user.  
