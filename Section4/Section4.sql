@@ -16,3 +16,6 @@ CREATE TABLE comments (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   photo_id INTEGER REFERENCES photos(id) ON DELETE CASCADE
 );
+
+-- For each comment, show contents of comment and the username of the user who wrote it.
+SELECT contents, username FROM comments JOIN users on users.id = comments.user_id;
