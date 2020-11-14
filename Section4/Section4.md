@@ -29,6 +29,12 @@ SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
 
 ### Left Outer Join
 
+![Left Outer Join](left_outer_join.png)
+
+```postgresql
+SELECT url, username FROM photos LEFT JOIN users on users.id = photos.user_id;
+```
+
 ### Right Outer Join
 
 ### Full Join
