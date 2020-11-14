@@ -39,3 +39,12 @@ A student has many classes. Classes have many students. ("has many" / "have many
 Example: 
 A Photo has many comments, so the comments get a foreign key column pointing at a photo.  
 A User has many comments, so the comments get a foreign key column pointing to a user.  
+
+## Foreign Key Deleting Constraints
+```
+ON DELETE RESTRICT -> Throw an error
+ON DELETE NO ACTION -> Throw an error
+ON DELETE CASCADE -> Delete the related objects
+ON DELETE SET NULL -> Set the 'user_id' of the photo to 'NULL'
+ON DELETE SET DEFAULT -> Set the 'user_id' of the photo to a default value, if one is provided
+```
