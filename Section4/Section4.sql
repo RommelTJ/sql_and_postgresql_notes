@@ -25,3 +25,7 @@ SELECT contents, url FROM comments JOIN photos ON comments.photo_id = photos.id;
 
 -- Show each photo url and the username of the poster
 SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
+
+-- Making missing data in Joins
+INSERT INTO photos (url, user_id) VALUES ('http://banner.jpg', NULL);
+SELECT url, username FROM photos LEFT JOIN users on users.id = photos.user_id;
