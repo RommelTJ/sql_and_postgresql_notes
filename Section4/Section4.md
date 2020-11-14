@@ -16,3 +16,19 @@
 * We must give context if column names collide.
 * Tables can be renamed using the 'AS' keyword.
 * There are a few kinds of joins.
+
+## Four kinds of Joins
+
+### Inner Join
+
+### Left Outer Join
+
+### Right Outer Join
+
+### Full Join
+
+![Full Join](full_join.png)
+
+```postgresql
+SELECT url, username FROM photos FULL JOIN users on users.id = photos.user_id;
+```
