@@ -22,3 +22,6 @@ SELECT contents, username FROM comments JOIN users on users.id = comments.user_i
 
 -- For each comment, list contents of comment and URL of photo the comment was added to.
 SELECT contents, url FROM comments JOIN photos ON comments.photo_id = photos.id;
+
+-- Show each photo url and the username of the poster
+SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
