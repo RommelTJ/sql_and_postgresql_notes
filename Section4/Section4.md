@@ -9,3 +9,10 @@
 
 * Looks at many rows and calculates a single value.
 * Words like 'most', 'average', 'least' are a sign that you need to use an aggregation.
+
+## Notes on Joins
+
+* Table order between FROM and JOIN frequently makes a difference.
+* We must give context if column names collide.
+* Tables can be renamed using the 'AS' keyword.
+* There are a few kinds of joins.
