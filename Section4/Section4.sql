@@ -19,3 +19,6 @@ CREATE TABLE comments (
 
 -- For each comment, show contents of comment and the username of the user who wrote it.
 SELECT contents, username FROM comments JOIN users on users.id = comments.user_id;
+
+-- For each comment, list contents of comment and URL of photo the comment was added to.
+SELECT contents, url FROM comments JOIN photos ON comments.photo_id = photos.id;
