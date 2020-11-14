@@ -74,3 +74,11 @@ CREATE TABLE photos (
   user_id INTEGER REFERENCES users(id) ON DELETE SET NULL
 );
 DELETE FROM users WHERE id = 4;
+
+-- Creating the comments table
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  photo_id INTEGER REFERENCES photos(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  contents VARCHAR(240)
+);
