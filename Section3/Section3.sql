@@ -58,3 +58,11 @@ VALUES
 
 -- Delete table
 DROP TABLE photos;
+
+-- On delete cascade
+CREATE TABLE photos (
+  id SERIAL PRIMARY KEY,
+  url VARCHAR(200),
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
+DELETE FROM users WHERE id = 1;
