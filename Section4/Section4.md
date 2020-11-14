@@ -19,7 +19,13 @@
 
 ## Four kinds of Joins
 
-### Inner Join
+### Inner Join (default)
+
+![Inner Join](inner_join.png)
+
+```postgresql
+SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
+```
 
 ### Left Outer Join
 
