@@ -55,3 +55,6 @@ VALUES
 ('http:/754.jpg', 2),
 ('http:/35.jpg', 3),
 ('http:/256.jpg', 4);
+
+-- Delete table
+DROP TABLE photos;
