@@ -39,3 +39,6 @@ SELECT photo_id, COUNT(*) FROM comments GROUP BY photo_id;
 
 -- Practice for Grouping and Aggregating
 SELECT author_id, COUNT(*) FROM books GROUP BY author_id;
+
+-- Grouping with a Join!
+SELECT name, COUNT(*) FROM authors JOIN books ON authors.id = books.author_id GROUP BY name;
