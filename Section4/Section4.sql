@@ -53,3 +53,10 @@ SELECT url, contents, username
 FROM comments
 JOIN photos ON comments.photo_id = photos.id
 JOIN users ON users.id = photos.user_id AND users.id = comments.user_id;
+
+-- Practice solution
+SELECT title, name, rating
+FROM books
+JOIN reviews ON books.id = reviews.book_id
+JOIN authors ON books.author_id = authors.id
+WHERE authors.id = reviews.reviewer_id;
