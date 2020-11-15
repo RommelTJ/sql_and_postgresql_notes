@@ -22,3 +22,12 @@ CREATE TABLE orders (
 (SELECT * FROM products ORDER BY price DESC LIMIT 4)
 UNION
 (SELECT * FROM products ORDER BY (price/weight) DESC LIMIT 4);
+
+-- Intersect example
+(SELECT * FROM products ORDER BY price DESC LIMIT 4)
+INTERSECT
+(SELECT * FROM products ORDER BY (price/weight) DESC LIMIT 4);
+
+(SELECT * FROM products ORDER BY price DESC LIMIT 4)
+INTERSECT ALL
+(SELECT * FROM products ORDER BY (price/weight) DESC LIMIT 4);
