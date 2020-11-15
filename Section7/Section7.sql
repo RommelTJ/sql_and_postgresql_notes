@@ -34,3 +34,6 @@ SELECT * FROM users OFFSET 40;
 
 -- LIMIT
 SELECT * FROM users OFFSET 40 LIMIT 2;
+
+-- Sorting, Offsetting and Limiting
+SELECT name FROM phones ORDER BY price DESC LIMIT 2 OFFSET 1;
