@@ -21,3 +21,10 @@ CREATE TABLE orders (
 -- The basics of sorting
 SELECT * FROM products ORDER BY price; -- default ascending
 SELECT * FROM products ORDER BY price DESC;
+
+-- Two variations on sorting
+SELECT * FROM products ORDER BY name;
+SELECT * FROM products ORDER BY name desc;
+
+SELECT * FROM products ORDER BY price, weight;
+SELECT * FROM products ORDER BY price ASC, weight DESC;
