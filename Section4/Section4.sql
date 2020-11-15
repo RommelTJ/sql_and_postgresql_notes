@@ -60,3 +60,9 @@ FROM books
 JOIN reviews ON books.id = reviews.book_id
 JOIN authors ON books.author_id = authors.id
 WHERE authors.id = reviews.reviewer_id;
+
+-- Another practice solution
+SELECT title, name, rating
+FROM reviews
+JOIN books ON books.id = reviews.book_id
+JOIN authors ON books.author_id = authors.id AND authors.id = reviews.reviewer_id;
