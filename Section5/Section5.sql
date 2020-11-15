@@ -36,3 +36,6 @@ SELECT user_id, COUNT(*) FROM comments GROUP BY user_id;
 
 -- Find the number of comments for each photo
 SELECT photo_id, COUNT(*) FROM comments GROUP BY photo_id;
+
+-- Practice for Grouping and Aggregating
+SELECT author_id, COUNT(*) FROM books GROUP BY author_id;
