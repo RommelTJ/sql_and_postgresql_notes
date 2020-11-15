@@ -42,3 +42,6 @@ SELECT author_id, COUNT(*) FROM books GROUP BY author_id;
 
 -- Grouping with a Join!
 SELECT name, COUNT(*) FROM authors JOIN books ON authors.id = books.author_id GROUP BY name;
+
+-- Find the number of comments for each photo where the photo_id is less than 3 and the photo has more than 2 comments
+SELECT photo_id, COUNT(*) as num_of_comments FROM comments GROUP BY photo_id HAVING photo_id < 3 AND COUNT(*) > 2;

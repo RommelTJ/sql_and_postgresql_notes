@@ -27,3 +27,7 @@ MAX() -> Returns the maximum value from a group of numbers
 ```
 
 When you make use of an aggregate function, you cannot just do a normal select next to it.
+
+## HAVING
+
+Filters the set of groups. Requires a GROUP BY.
