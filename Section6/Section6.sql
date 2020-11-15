@@ -25,3 +25,8 @@ SELECT * FROM orders;
 
 -- Group by review
 SELECT paid, COUNT(*) FROM orders GROUP BY paid;
+
+-- Inner Join review
+SELECT first_name, last_name, paid
+FROM users
+JOIN orders o on users.id = o.user_id;
