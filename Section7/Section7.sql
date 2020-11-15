@@ -28,3 +28,9 @@ SELECT * FROM products ORDER BY name desc;
 
 SELECT * FROM products ORDER BY price, weight;
 SELECT * FROM products ORDER BY price ASC, weight DESC;
+
+-- OFFSET
+SELECT * FROM users OFFSET 40;
+
+-- LIMIT
+SELECT * FROM users OFFSET 40 LIMIT 2;
