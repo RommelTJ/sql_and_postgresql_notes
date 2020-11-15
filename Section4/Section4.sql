@@ -33,3 +33,6 @@ SELECT url, username FROM photos LEFT JOIN users on users.id = photos.user_id;
 -- Testing right join
 INSERT INTO users (username) VALUES ('Nicole');
 SELECT url, username FROM photos RIGHT JOIN users on users.id = photos.user_id;
+
+-- Testing full join
+SELECT url, username FROM photos FULL JOIN users on users.id = photos.user_id;
