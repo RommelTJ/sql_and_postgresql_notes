@@ -20,3 +20,5 @@ CREATE TABLE comments (
 -- Picturing Group By
 SELECT user_id FROM comments GROUP BY user_id;
 
+-- Aggregate Functions
+SELECT MAX(id) FROM comments;
