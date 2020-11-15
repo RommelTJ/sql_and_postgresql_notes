@@ -27,6 +27,8 @@
 SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
 ```
 
+Order matters doesn't matter for inner join.
+
 ### Left Outer Join
 
 ![Left Outer Join](left_outer_join.png)
@@ -34,6 +36,8 @@ SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
 ```postgresql
 SELECT url, username FROM photos LEFT JOIN users on users.id = photos.user_id;
 ```
+
+Order matters for left outer join.
 
 ### Right Outer Join
 
@@ -43,6 +47,8 @@ SELECT url, username FROM photos LEFT JOIN users on users.id = photos.user_id;
 SELECT url, username FROM photos RIGHT JOIN users on users.id = photos.user_id;
 ```
 
+Order matters for right outer join.
+
 ### Full Join
 
 ![Full Join](full_join.png)
@@ -50,3 +56,5 @@ SELECT url, username FROM photos RIGHT JOIN users on users.id = photos.user_id;
 ```postgresql
 SELECT url, username FROM photos FULL JOIN users on users.id = photos.user_id;
 ```
+
+Order matters doesn't matter for full joins.
