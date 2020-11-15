@@ -36,3 +36,14 @@ INTERSECT ALL
 (SELECT * FROM products ORDER BY price DESC LIMIT 4)
 EXCEPT
 (SELECT * FROM products ORDER BY (price/weight) DESC LIMIT 4);
+
+-- Merging Results with Union
+CREATE TABLE phones (
+  name VARCHAR(200),
+  manufacturer VARCHAR(200),
+  price INTEGER,
+  units_sold INTEGER
+);
+(SELECT manufacturer FROM phones WHERE price < 170)
+UNION
+(SELECT manufacturer FROM phones GROUP BY manufacturer HAVING COUNT(*) > 2);
