@@ -27,3 +27,9 @@ SELECT MAX(id) FROM comments;
 SELECT user_id, MAX(id) FROM comments GROUP BY user_id;
 -- Number of comments a user has made.
 SELECT user_id, COUNT(id) FROM comments GROUP BY user_id;
+
+-- Gotcha with counts
+-- Count all photos
+SELECT COUNT(user_id) FROM photos; -- 20 instead of 21 since NULL values are not counted
+SELECT COUNT(*) FROM photos; -- Counts Null, so returns 21
+SELECT user_id, COUNT(*) FROM comments GROUP BY user_id;
