@@ -17,3 +17,7 @@ CREATE TABLE orders (
   product_id INTEGER REFERENCES products(id),
   paid BOOLEAN
 );
+
+-- The basics of sorting
+SELECT * FROM products ORDER BY price; -- default ascending
+SELECT * FROM products ORDER BY price DESC;
