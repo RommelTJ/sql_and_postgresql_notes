@@ -10,3 +10,8 @@
 
 * Reduces many values down to one
 * Done by using 'aggregate functions'
+
+## Group By
+
+* Find the set of all unique user_ids
+* Take each row and assign it to a group based on its user_id
