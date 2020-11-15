@@ -29,3 +29,7 @@ SELECT url, username FROM photos JOIN users on users.id = photos.user_id;
 -- Making missing data in Joins
 INSERT INTO photos (url, user_id) VALUES ('http://banner.jpg', NULL);
 SELECT url, username FROM photos LEFT JOIN users on users.id = photos.user_id;
+
+-- Testing right join
+INSERT INTO users (username) VALUES ('Nicole');
+SELECT url, username FROM photos RIGHT JOIN users on users.id = photos.user_id;
