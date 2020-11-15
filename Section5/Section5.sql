@@ -46,3 +46,11 @@ SELECT name, COUNT(*) FROM authors JOIN books ON authors.id = books.author_id GR
 -- Find the number of comments for each photo where the photo_id is less than 3 and the photo has more than 2 comments
 SELECT photo_id, COUNT(*) as num_of_comments FROM comments GROUP BY photo_id HAVING photo_id < 3 AND COUNT(*) > 2;
 SELECT photo_id, COUNT(*) as num_of_comments FROM comments WHERE photo_id < 3 GROUP BY photo_id HAVING COUNT(*) > 2;
+
+-- Find the users (user_ids) where the user has commented on the first 50 photos
+-- and the user added more than or equal to 20 comments on those photos.
+SELECT user_id, COUNT(*)
+FROM comments
+WHERE photo_id <= 50
+GROUP BY user_id
+HAVING COUNT(*) >= 20;
