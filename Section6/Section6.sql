@@ -22,3 +22,6 @@ CREATE TABLE orders (
 SELECT * FROM users;
 SELECT * FROM products;
 SELECT * FROM orders;
+
+-- Group by review
+SELECT paid, COUNT(*) FROM orders GROUP BY paid;
