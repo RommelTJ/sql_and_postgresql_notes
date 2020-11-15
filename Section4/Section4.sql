@@ -36,3 +36,7 @@ SELECT url, username FROM photos RIGHT JOIN users on users.id = photos.user_id;
 
 -- Testing full join
 SELECT url, username FROM photos FULL JOIN users on users.id = photos.user_id;
+
+-- Users can comment on photos they posted. List the url and contents for every photo/comment where this occurred.
+-- Who is commenting on their own photos?
+SELECT url, contents FROM photos JOIN comments ON comments.photo_id = photos.id WHERE photos.user_id = comments.user_id;
