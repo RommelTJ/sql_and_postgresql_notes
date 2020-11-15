@@ -22,3 +22,8 @@ SELECT user_id FROM comments GROUP BY user_id;
 
 -- Aggregate Functions
 SELECT MAX(id) FROM comments;
+
+-- Combining Group By and Aggregates
+SELECT user_id, MAX(id) FROM comments GROUP BY user_id;
+-- Number of comments a user has made.
+SELECT user_id, COUNT(id) FROM comments GROUP BY user_id;
