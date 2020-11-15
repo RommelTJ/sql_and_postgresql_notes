@@ -33,3 +33,6 @@ SELECT user_id, COUNT(id) FROM comments GROUP BY user_id;
 SELECT COUNT(user_id) FROM photos; -- 20 instead of 21 since NULL values are not counted
 SELECT COUNT(*) FROM photos; -- Counts Null, so returns 21
 SELECT user_id, COUNT(*) FROM comments GROUP BY user_id;
+
+-- Find the number of comments for each photo
+SELECT photo_id, COUNT(*) FROM comments GROUP BY photo_id;
