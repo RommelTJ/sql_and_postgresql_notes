@@ -47,3 +47,9 @@ FROM photos
 JOIN comments ON comments.photo_id = photos.id
 JOIN users ON users.id = photos.user_id
 WHERE photos.user_id = comments.user_id;
+
+-- Another solution
+SELECT url, contents, username
+FROM comments
+JOIN photos ON comments.photo_id = photos.id
+JOIN users ON users.id = photos.user_id AND users.id = comments.user_id;
