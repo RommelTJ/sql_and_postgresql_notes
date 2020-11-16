@@ -30,3 +30,8 @@ FROM products
 WHERE price > (
   SELECT MAX(price) FROM products WHERE department = 'Toys'
 );
+
+-- Understanding data
+SELECT * FROM orders;
+SELECT id FROM orders;
+SELECT COUNT(*) FROM orders;
