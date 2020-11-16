@@ -52,3 +52,11 @@ SELECT
     price,
     price / (SELECT MAX(price) FROM phones) AS price_ratio
 FROM phones;
+
+-- Subqueries in a FROM
+-- Any subquery is ok, as long as the outer SELECTs/WHEREs/etc are compatible
+-- You must apply an alias to the result of the subquery.
+SELECT name, price / weight AS price_weight_ratio FROM products;
+SELECT name, price_weight_ratio
+FROM (SELECT name, price / weight AS price_weight_ratio FROM products) AS p
+WHERE price_weight_ratio > 5;
