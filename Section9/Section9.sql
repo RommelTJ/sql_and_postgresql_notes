@@ -45,3 +45,10 @@ WHERE price > 876;
 SELECT name, price, (SELECT price FROM products WHERE id = 3) AS id_3_price
 FROM products
 WHERE price > 876;
+
+-- Embedding in Select
+SELECT
+    name,
+    price,
+    price / (SELECT MAX(price) FROM phones) AS price_ratio
+FROM phones;
