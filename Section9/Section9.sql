@@ -64,3 +64,7 @@ WHERE price_weight_ratio > 5;
 -- From subqueries that return a value
 SELECT MAX(price) FROM products;
 SELECT * FROM (SELECT MAX(price) FROM products) AS p;
+
+-- Find the average number of orders for all users.
+SELECT user_id, COUNT(*) AS order_count FROM orders GROUP BY user_id;
+SELECT AVG(o.order_count) FROM (SELECT user_id, COUNT(*) AS order_count FROM orders GROUP BY user_id) AS o;
