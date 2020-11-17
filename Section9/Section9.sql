@@ -68,3 +68,7 @@ SELECT * FROM (SELECT MAX(price) FROM products) AS p;
 -- Find the average number of orders for all users.
 SELECT user_id, COUNT(*) AS order_count FROM orders GROUP BY user_id;
 SELECT AVG(o.order_count) FROM (SELECT user_id, COUNT(*) AS order_count FROM orders GROUP BY user_id) AS o;
+
+-- Subquery From's
+SELECT AVG(price) AS avg_price FROM phones GROUP BY manufacturer;
+SELECT MAX(avg_price) AS max_average_price FROM (SELECT AVG(price) AS avg_price FROM phones GROUP BY manufacturer) as m;
