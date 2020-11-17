@@ -60,3 +60,7 @@ SELECT name, price / weight AS price_weight_ratio FROM products;
 SELECT name, price_weight_ratio
 FROM (SELECT name, price / weight AS price_weight_ratio FROM products) AS p
 WHERE price_weight_ratio > 5;
+
+-- From subqueries that return a value
+SELECT MAX(price) FROM products;
+SELECT * FROM (SELECT MAX(price) FROM products) AS p;
