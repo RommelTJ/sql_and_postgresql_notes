@@ -83,3 +83,7 @@ ON o.user_id = users.id;
 -- Show the id of orders that involve a product with a price/weight ratio greater than 5
 SELECT id from products WHERE price/weight > 5;
 SELECT id FROM orders WHERE product_id IN (SELECT id from products WHERE price/weight > 5);
+
+-- Show the name of all products with a price greater than the average product price.
+SELECT AVG(price) FROM products;
+SELECT name FROM products WHERE price > (SELECT AVG(price) FROM products);
