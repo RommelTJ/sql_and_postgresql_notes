@@ -90,3 +90,7 @@ SELECT name FROM products WHERE price > (SELECT AVG(price) FROM products);
 
 -- Subquery where's
 SELECT name, price FROM phones WHERE price > (SELECT price FROM phones WHERE name = 'S5620 Monte');
+
+-- Show the name of all products that are not in the same department as products with a price less than 100.
+SELECT department FROM products WHERE price < 100;
+SELECT name FROM products WHERE department NOT IN (SELECT department FROM products WHERE price < 100);
