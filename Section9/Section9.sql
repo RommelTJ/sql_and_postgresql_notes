@@ -72,3 +72,9 @@ SELECT AVG(o.order_count) FROM (SELECT user_id, COUNT(*) AS order_count FROM ord
 -- Subquery From's
 SELECT AVG(price) AS avg_price FROM phones GROUP BY manufacturer;
 SELECT MAX(avg_price) AS max_average_price FROM (SELECT AVG(price) AS avg_price FROM phones GROUP BY manufacturer) as m;
+
+-- Subqueries in a Join clause
+SELECT user_id FROM orders WHERE product_id = 3;
+SELECT first_name FROM users
+JOIN (SELECT user_id FROM orders WHERE product_id = 3) as o
+ON o.user_id = users.id;
