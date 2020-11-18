@@ -78,3 +78,8 @@ SELECT user_id FROM orders WHERE product_id = 3;
 SELECT first_name FROM users
 JOIN (SELECT user_id FROM orders WHERE product_id = 3) as o
 ON o.user_id = users.id;
+
+-- Subqueries in a Where clause
+-- Show the id of orders that involve a product with a price/weight ratio greater than 5
+SELECT id from products WHERE price/weight > 5;
+SELECT id FROM orders WHERE product_id IN (SELECT id from products WHERE price/weight > 5);
