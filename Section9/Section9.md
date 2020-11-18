@@ -31,3 +31,6 @@ Operator in WHERE clause -> Structure of data in subquery
 >, <, >=, <=, =, <> or != -> Single value
 IN, NOT IN, >/</>=/<=/=/<> ALL/SOME/ANY -> Single column
 ```
+
+`> ALL` makes sure all values are greater than.
+ 
