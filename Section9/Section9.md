@@ -33,4 +33,5 @@ IN, NOT IN, >/</>=/<=/=/<> ALL/SOME/ANY -> Single column
 ```
 
 `> ALL` makes sure all values are greater than.
- 
+`SOME` is an alias for `ANY`.
+`> SOME` makes sure a value is greater than at least one of the values.

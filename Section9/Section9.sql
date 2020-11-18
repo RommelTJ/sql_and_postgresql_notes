@@ -100,3 +100,9 @@ SELECT price FROM products WHERE department = 'Industrial';
 SELECT name, department, price
 FROM products
 WHERE price > ALL (SELECT price FROM products WHERE department = 'Industrial');
+
+-- Show the name of products that are more expensive than at least one product in the 'Industrial' department
+SELECT price FROM products WHERE department = 'Industrial';
+SELECT name, department, price
+FROM products
+WHERE price > SOME (SELECT price FROM products WHERE department = 'Industrial');
