@@ -23,3 +23,11 @@ SELECT * FROM orders -> Many rows, many columns
 SELECT id FROM orders -> Many rows, one column
 SELECT COUNT(*) FROM orders -> One row, one column (single value - Scalar query)
 ```
+
+## Data Structure with Where subqueries
+
+```
+Operator in WHERE clause -> Structure of data in subquery
+>, <, >=, <=, =, <> or != -> Single value
+IN, NOT IN, >/</>=/<=/=/<> ALL/SOME/ANY -> Single column
+```
