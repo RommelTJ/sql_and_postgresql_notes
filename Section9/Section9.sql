@@ -106,3 +106,7 @@ SELECT price FROM products WHERE department = 'Industrial';
 SELECT name, department, price
 FROM products
 WHERE price > SOME (SELECT price FROM products WHERE department = 'Industrial');
+
+-- Practice your subqueries
+SELECT price FROM phones WHERE manufacturer = 'Samsung';
+SELECT name FROM phones WHERE price > (SELECT price FROM phones WHERE manufacturer = 'Samsung');
