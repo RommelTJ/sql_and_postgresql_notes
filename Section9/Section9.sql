@@ -87,3 +87,6 @@ SELECT id FROM orders WHERE product_id IN (SELECT id from products WHERE price/w
 -- Show the name of all products with a price greater than the average product price.
 SELECT AVG(price) FROM products;
 SELECT name FROM products WHERE price > (SELECT AVG(price) FROM products);
+
+-- Subquery where's
+SELECT name, price FROM phones WHERE price > (SELECT price FROM phones WHERE name = 'S5620 Monte');
