@@ -130,3 +130,9 @@ ORDER BY 2 DESC;
 SELECT (SELECT MAX(price) from products);
 SELECT (SELECT MAX(price) from products) / (SELECT AVG(price) from products) AS max_over_avg;
 SELECT (SELECT MAX(price) from products), (SELECT AVG(price) from products);
+
+-- From-less Select exercise
+SELECT
+ (SELECT MAX(price) FROM phones) AS max_price,
+ (SELECT MIN(price) FROM phones) AS min_price,
+ (SELECT AVG(price) FROM phones) AS avg_price;
