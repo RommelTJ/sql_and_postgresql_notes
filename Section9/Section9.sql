@@ -110,3 +110,10 @@ WHERE price > SOME (SELECT price FROM products WHERE department = 'Industrial');
 -- Practice your subqueries
 SELECT price FROM phones WHERE manufacturer = 'Samsung';
 SELECT name FROM phones WHERE price > (SELECT price FROM phones WHERE manufacturer = 'Samsung');
+
+-- Show the name, department, and price of the most expensive product in each department
+-- SELECT MAX(price) FROM products AS p2 WHERE p2.department = p1.department;
+SELECT name, department, price
+FROM products AS p1
+WHERE p1.price = (SELECT MAX(price) FROM products AS p2 WHERE p2.department = p1.department)
+ORDER BY department;
