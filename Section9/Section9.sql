@@ -117,3 +117,10 @@ SELECT name, department, price
 FROM products AS p1
 WHERE p1.price = (SELECT MAX(price) FROM products AS p2 WHERE p2.department = p1.department)
 ORDER BY department;
+
+-- Without using a join or a group by, print the number of orders for each product
+SELECT
+  p1.name,
+  (SELECT COUNT(*) AS total_count FROM orders AS o1 WHERE p1.id = o1.product_id)
+FROM products AS p1
+ORDER BY 2 DESC;
