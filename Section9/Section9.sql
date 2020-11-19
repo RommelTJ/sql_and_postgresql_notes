@@ -124,3 +124,9 @@ SELECT
   (SELECT COUNT(*) AS total_count FROM orders AS o1 WHERE p1.id = o1.product_id)
 FROM products AS p1
 ORDER BY 2 DESC;
+
+-- SELECT without a From (only possible if returning a single value)
+-- Useful when trying to calculate one single value out of many values.
+SELECT (SELECT MAX(price) from products);
+SELECT (SELECT MAX(price) from products) / (SELECT AVG(price) from products) AS max_over_avg;
+SELECT (SELECT MAX(price) from products), (SELECT AVG(price) from products);
