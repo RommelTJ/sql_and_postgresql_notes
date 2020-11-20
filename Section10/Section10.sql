@@ -23,3 +23,9 @@ CREATE TABLE phones (
   price INTEGER,
   units_sold INTEGER
 );
+
+-- What unique departments are there?
+SELECT DISTINCT department FROM products;
+SELECT COUNT(DISTINCT department) FROM products;
+SELECT DISTINCT department, name FROM products;
+-- You can only do a count on distinct with one column
