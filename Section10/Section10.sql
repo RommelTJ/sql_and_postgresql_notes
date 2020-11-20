@@ -29,3 +29,6 @@ SELECT DISTINCT department FROM products;
 SELECT COUNT(DISTINCT department) FROM products;
 SELECT DISTINCT department, name FROM products;
 -- You can only do a count on distinct with one column
+
+-- Practice with distinct
+SELECT COUNT(DISTINCT manufacturer) FROM phones;
