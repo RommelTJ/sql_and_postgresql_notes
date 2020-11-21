@@ -90,3 +90,21 @@ No decimal point, auto increment:
 
 `TIMESTAMP` or `TIMESTAMP WITH TIME ZONE`
 * `Nov-20-1980 05:23 PM PST` -> `1980-11-20 18:23:00-07`
+
+## INTERVAL
+
+Durations of time
+* `1 day` -> 1 day
+* `1 D` -> 1 day
+* `1 D 1 M 1 S` -> 1 day 1 minute 1 second
+
+Examples of using intervals:  
+`SELECT ('1 D 20 H 30 M 45 S'::INTERVAL)` ->  `1 day 20:30:45`  
+
+`SELECT ('1 D 20 H 30 M 45 S'::INTERVAL) - ('1 D'::INTERVAL)` -> `20:30:45`
+  
+`SELECT ('NOV-20-1980 1:23 AM EST'::TIMESTAMP WITH TIME ZONE) - ('1 D'::INTERVAL)` -> `"1980-11-18 22:23:00-08"`
+  
+`SELECT ('NOV-20-1980 1:23 AM EST'::TIMESTAMP WITH TIME ZONE) - ('NOV-10-1980 1:23 AM EST'::TIMESTAMP WITH TIME ZONE)` -> `"10 days"`
+
+`SELECT ('NOV-20-1980 1:23 AM EST'::TIMESTAMP WITH TIME ZONE) - ('NOV-10-1980 5:43 AM PST'::TIMESTAMP WITH TIME ZONE)` -> `"9 days 16:40:00"`
