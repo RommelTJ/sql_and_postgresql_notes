@@ -68,3 +68,25 @@ No decimal point, auto increment:
 * true, 'yes', 'on', 1, 't', 'y' -> `TRUE`
 * false, 'no', 'off', 0, 'f', 'n' -> `FALSE`
 * null -> `NULL`
+
+## Times, Dates, and Timestamps
+
+`DATE`
+* `1980-11-20` -> 20 November 1980
+* `Nov-20-1980` -> 20 November 1980
+* `20-Nov-1980` -> 20 November 1980
+* `1980-November-20` -> 20 November 1980
+* `November 20, 1980` -> 20 November 1980
+
+`TIME` (alias for `TIME WITHOUT TIME ZONE`)
+* `01:23 AM` -> 01:23, no time zone
+* `05:23 PM` -> 17:23, no time zone
+* `20:34` -> 20:34, no time zone
+
+`TIME WITH TIME ZONE`
+* `01:23 AM EST` -> 01:23-05:00
+* `05:23 PM PST` -> 17:23-08:00
+* `05:23 PM UTC` -> 17:23+00:00
+
+`TIMESTAMP` or `TIMESTAMP WITH TIME ZONE`
+* `Nov-20-1980 05:23 PM PST` -> `1980-11-20 18:23:00-07`
