@@ -56,9 +56,15 @@ No decimal point, auto increment:
 
 `SELECT (1.99999::NUMERIC - 1.99998::NUMERIC)` = `0.00001`
 
-# Reminder on Character Types
+## Reminder on Character Types
 
 * CHAR(5) -> Stores a fix length of characters
 * VARCHAR -> Stores any length of string
 * VARCHAR(40) -> Store a string up to 40 characters, automatically remove extra characters
 * TEXT -> Store any length of string
+
+## Boolean Data Types
+
+* true, 'yes', 'on', 1, 't', 'y' -> `TRUE`
+* false, 'no', 'off', 0, 'f', 'n' -> `FALSE`
+* null -> `NULL`
