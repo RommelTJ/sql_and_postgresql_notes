@@ -49,3 +49,9 @@ No decimal point, auto increment:
 * Need to store a number without a decimal -> `INTEGER`
 * Bank balance, grams of gold, scientific calculations (needs to be accurate) -> `NUMERIC`
 * Kilograms of trash, liters of water in a lake, air pressure in a tire (decimal doesn't make a big difference) -> `DOUBLE`
+
+## More on Number Data Types
+
+`SELECT (1.99999::REAL - 1.99998::REAL)` = `0.00001001358`
+
+`SELECT (1.99999::NUMERIC - 1.99998::NUMERIC)` = `0.00001`
