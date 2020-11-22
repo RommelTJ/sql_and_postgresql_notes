@@ -68,3 +68,44 @@ Solution #3:
 * Still want to write queries that will count up all likes? You can use a Union or a View.
 
 Example: `posts_likes` table, `comments_likes` table, etc. 
+
+## Our approach
+
+Solution #2
+When a user likes a post or a comment, we don't need to store post or comment specific logic so it's not necessary 
+to create separate tables.
+
+On dbdiagram.io: 
+```
+table users {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  username varchar(30)
+}
+
+table comments {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  contents varchar(240)
+  user_id integer [ref: > users.id]
+  post_id integer [ref: > posts.id]
+}
+
+table posts {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  url varchar(200)
+  user_id integer [ref: > users.id]
+}
+
+table likes {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  user_id integer [ref: > users.id]
+  post_id integer [ref: > posts.id]
+  comment_id integer [ref: > comments.id]
+}
+```
