@@ -72,21 +72,26 @@ CREATE TABLE caption_tags(
   UNIQUE(user_id, post_id)
 );
 
--- table hashtags {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   title VARCHAR(20)
--- }
+-- Hashtags
+CREATE TABLE hashtags(
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  title VARCHAR(20) NOT NULL UNIQUE
+);
 
--- table hashtags_posts {
---   id SERIAL [pk, increment]
---   hashtag_id integer [ref: > hashtags.id]
---   post_id integer [ref: > posts.id]
--- }
+-- Hashtags Posts
+CREATE TABLE hashtags_posts(
+  id SERIAL PRIMARY KEY,
+  hashtag_id INTEGER NOT NULL REFERENCES hashtags(id) ON DELETE CASCADE,
+  post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+  UNIQUE(hashtag_id, post_id)
+);
 
--- table followers {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   leader_id integer [ref: > users.id]
---   follower_id integer [ref: > users.id]
--- }
+-- Followers
+CREATE TABLE followers(
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  leader_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  follower_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  UNIQUE(leader_id, follower_id)
+);
