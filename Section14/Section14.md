@@ -24,3 +24,15 @@
 ## Adding a validation check
 
 `price INTEGER CHECK (price > 0)` or `ALTER TABLE products ADD CHECK (price > 0)`
+
+## Checks over multiple columns
+
+```postgresql
+CREATE TABLE orders (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	created_at TIMESTAMP NOT NULL,
+	est_delivery TIMESTAMP NOT NULL,
+	CHECK (created_at < est_delivery)
+);
+```
