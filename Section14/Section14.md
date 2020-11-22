@@ -16,3 +16,7 @@
 ## Dropping a constraint
 
 `ALTER TABLE products DROP CONSTRAINT products_name_key;`
+
+## Multi-column uniqueness
+
+`ALTER TABLE products ADD UNIQUE (name, department)`
