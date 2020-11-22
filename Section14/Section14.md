@@ -4,3 +4,7 @@
 
 `price INTEGER NOT NULL` or `ALTER TABLE products ALTER COLUMN price SET NOT NULL`
 `UPDATE products SET price = 999 WHERE price IS NULL;`
+
+## Default Column Values
+
+`price INTEGER DEFAULT 999` or `ALTER TABLE products ALTER COLUMN price SET DEFAULT 999`
