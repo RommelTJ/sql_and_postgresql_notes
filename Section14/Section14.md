@@ -12,3 +12,7 @@
 ## Unique constraints
 
 `name VARCHAR(50) UNIQUE` or `ALTER TABLE products ADD UNIQUE (name)`
+
+## Dropping a constraint
+
+`ALTER TABLE products DROP CONSTRAINT products_name_key;`
