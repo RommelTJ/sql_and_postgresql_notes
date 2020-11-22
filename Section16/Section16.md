@@ -20,3 +20,6 @@ Bad because:
 * No way to figure out which users like a post
 * No way to remove a like if a user gets deleted
 
+## Designing a Like system
+
+Add a third table called `likes` with a unique constraint for `UNIQUE(user_id, post_id)`
