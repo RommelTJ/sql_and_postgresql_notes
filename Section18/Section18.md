@@ -20,3 +20,20 @@ for performance reasons it will be done differently.
 
 Table: `hashtags` -> `id`, `title`.
 Table: `hashtags_posts` -> `id`, `hashtag_id`, `post_id`
+
+## Including the Hashtag Table
+
+On dbdiagram.io: 
+```
+table hashtags {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  title VARCHAR(20)
+}
+
+table hashtags_posts {
+  id SERIAL [pk, increment]
+  hashtag_id integer [ref: > hashtags.id]
+  post_id integer [ref: > posts.id]
+}
+```
