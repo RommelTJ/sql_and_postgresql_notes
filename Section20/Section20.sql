@@ -1,15 +1,4 @@
--- table users {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   updated_at timestamp
---   username varchar(30)
---   bio VARCHAR(400)
---   avatar VARCHAR(200)
---   phone VARCHAR(25)
---   email VARCHAR(40)
---   password VARCHAR(50)
---   status VARCHAR(15)
--- }
+-- Users
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -33,16 +22,17 @@ CREATE TABLE users(
 --   post_id integer [ref: > posts.id]
 -- }
 
--- table posts {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   updated_at timestamp
---   url varchar(200)
---   user_id integer [ref: > users.id]
---   caption VARCHAR(240)
---   lat real
---   lng real
--- }
+-- Posts
+CREATE TABLE posts(
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  url VARCHAR(200) NOT NULL,
+  caption VARCHAR(240),
+  lat REAL CHECK(lat IS NULL OR (lat >= -90 AND lat <= 90)),
+  lng REAL CHECK(lng IS NULL OR (lng >= -180 AND lat <= 180)),
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
+);
 
 -- table likes {
 --   id SERIAL [pk, increment]
