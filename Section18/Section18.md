@@ -55,3 +55,10 @@ table users {
   status VARCHAR(15)
 }
 ```
+
+## Why No Number of Followers or Posts?
+
+It's simple to generate the relationship with a followers table. We do not want to store
+computed values that already exist in the DB.
+
+We call this 'derived data'. We generally don't want to store derived data.
