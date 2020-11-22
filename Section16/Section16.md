@@ -28,3 +28,17 @@ Add a third table called `likes` with a unique constraint for `UNIQUE(user_id, p
 
 Add a third table called `reactions` with a unique constraint for `UNIQUE(user_id, post_id)` with a `type` column
 like `like`, `love`, `care`, `sad`, etc.
+
+## Polymorphic Associations
+
+Allowing the user to like either a post or a comment.
+
+Solution #1:
+Not really recommended.
+* A like can be a 'post like' or a 'comment like'.
+* Requires your app to figure out the meaning of each like
+
+Example: likes table has `id`, `user_id`, `liked_id`, `liked_type` where liked type can be post or comment
+
+The downside with this approach is that `liked_id` can't be a foreign key column. It would be a plain integer.
+We would lose all of the advantages of having foreign keys.
