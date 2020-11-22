@@ -20,3 +20,7 @@
 ## Multi-column uniqueness
 
 `ALTER TABLE products ADD UNIQUE (name, department)`
+
+## Adding a validation check
+
+`price INTEGER CHECK (price > 0)` or `ALTER TABLE products ADD CHECK (price > 0)`
