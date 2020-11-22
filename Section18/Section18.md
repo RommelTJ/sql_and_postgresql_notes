@@ -37,3 +37,21 @@ table hashtags_posts {
   post_id integer [ref: > posts.id]
 }
 ```
+
+## A few more user columns
+
+On dbdiagram.io: 
+```
+table users {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  username varchar(30)
+  bio VARCHAR(400)
+  avatar VARCHAR(200)
+  phone VARCHAR(25)
+  email VARCHAR(40)
+  password VARCHAR(50)
+  status VARCHAR(15)
+}
+```
