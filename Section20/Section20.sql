@@ -51,22 +51,26 @@ CREATE TABLE likes(
   UNIQUE(user_id, post_id, comment_id)
 );
 
--- table photo_tags {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   updated_at timestamp
---   post_id integer [ref: > posts.id]
---   user_id integer [ref: > users.id]
---   x integer
---   y integer
--- }
+-- Photo Tags
+CREATE TABLE photo_tags(
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  x INTEGER NOT NULL,
+  y INTEGER NOT NULL,
+  UNIQUE(user_id, post_id)
+);
 
--- table caption_tags {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   post_id integer [ref: > posts.id]
---   user_id integer [ref: > users.id]
--- }
+-- Caption Tags
+CREATE TABLE caption_tags(
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  UNIQUE(user_id, post_id)
+);
 
 -- table hashtags {
 --   id SERIAL [pk, increment]
