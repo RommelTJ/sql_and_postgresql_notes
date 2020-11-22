@@ -42,3 +42,21 @@ Example: likes table has `id`, `user_id`, `liked_id`, `liked_type` where liked t
 
 The downside with this approach is that `liked_id` can't be a foreign key column. It would be a plain integer.
 We would lose all of the advantages of having foreign keys.
+
+## Polymorphic Association Alternative Implementation
+
+Solution #2:
+* Each possible type of relationship gets its own Foreign Key column
+* We'd still want to make sure either post_id or comment_id is not null
+
+Example: likes table has `id`, `user_id`, `post_id`, `comment_id` where post_id and comment_id are true foreign key 
+columns.
+
+Add check of:
+```
+(
+  COALESCE((post_id)::BOOLEAN::INTEGER, 0)
+  +
+  COALESCE((comment_id)::BOOLEAN::INTEGER, 0)
+) = 1
+```
