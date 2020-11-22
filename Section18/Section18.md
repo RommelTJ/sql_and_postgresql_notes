@@ -12,3 +12,11 @@ can search for posts that contain a hashtag, but can't search for users or comme
 that use a hashtag.
 
 We only need a `hashtags_posts` table then.
+
+## Tables for Hashtags
+
+We might have a `hashtags` table with `id`, `title`, and `post_id` columns but
+for performance reasons it will be done differently.
+
+Table: `hashtags` -> `id`, `title`.
+Table: `hashtags_posts` -> `id`, `hashtag_id`, `post_id`
