@@ -60,3 +60,11 @@ Add check of:
   COALESCE((comment_id)::BOOLEAN::INTEGER, 0)
 ) = 1
 ```
+
+## The Simplest Alternative
+
+Solution #3:
+* Each type of like gets its own table
+* Still want to write queries that will count up all likes? You can use a Union or a View.
+
+Example: `posts_likes` table, `comments_likes` table, etc. 
