@@ -36,3 +36,15 @@ CREATE TABLE orders (
 	CHECK (created_at < est_delivery)
 );
 ```
+
+## Where to add Validation
+
+Web Server
+* Easier to express more complex validation
+* Far easier to apply new validation rules
+* Many libraries to handle validation automatically
+
+Database
+* Validation still applied even if you connect with a different client
+* Guaranteed that validation is always applied
+* Can only apply new validation rules if all existing rows satisfy it
