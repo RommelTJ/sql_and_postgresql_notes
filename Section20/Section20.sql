@@ -13,14 +13,15 @@ CREATE TABLE users(
   CHECK(COALESCE(phone, email) IS NOT NULL)
 );
 
--- table comments {
---   id SERIAL [pk, increment]
---   created_at timestamp
---   updated_at timestamp
---   contents varchar(240)
---   user_id integer [ref: > users.id]
---   post_id integer [ref: > posts.id]
--- }
+-- Comments
+CREATE TABLE comments(
+  id SERIAL PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  contents VARCHAR(240) NOT NULL,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  post_id INTEGER NOT NULL REFERENCES posts(id) ON DELETE CASCADE
+);
 
 -- Posts
 CREATE TABLE posts(
