@@ -8,3 +8,7 @@
 ## Default Column Values
 
 `price INTEGER DEFAULT 999` or `ALTER TABLE products ALTER COLUMN price SET DEFAULT 999`
+
+## Unique constraints
+
+`name VARCHAR(50) UNIQUE` or `ALTER TABLE products ADD UNIQUE (name)`
