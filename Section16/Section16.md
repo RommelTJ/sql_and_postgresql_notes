@@ -23,3 +23,8 @@ Bad because:
 ## Designing a Like system
 
 Add a third table called `likes` with a unique constraint for `UNIQUE(user_id, post_id)`
+
+## Making a Reaction System instead
+
+Add a third table called `reactions` with a unique constraint for `UNIQUE(user_id, post_id)` with a `type` column
+like `like`, `love`, `care`, `sad`, etc.
