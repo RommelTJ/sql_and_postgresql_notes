@@ -23,3 +23,16 @@ table posts {
   lng real
 }
 ```
+
+## Photo Mentions vs Caption Mentions
+
+Tagging a person inside of a photo.
+
+Might create a new `tags` table with `id`, `user_id`, and `post_id` columns.
+To store location, we also add `x`, and `y` columns for the coordinates from the top-left.
+
+* Highlighted text doesn't necessarily mean that we need to store something in the database.
+* Mobile app could be in charge of highlighting anything that looks like a mention
+* Need to show a list of posts a user was mentioned in?
+* Need to show a list of the most-often mentioned users?
+* Need to notify a user when they've been mentioned?
