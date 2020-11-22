@@ -36,3 +36,16 @@ To store location, we also add `x`, and `y` columns for the coordinates from the
 * Need to show a list of posts a user was mentioned in?
 * Need to show a list of the most-often mentioned users?
 * Need to notify a user when they've been mentioned?
+
+## Considerations on Photo Tags vs Caption Tags
+
+Tag solution #1:
+* `tags` table has x, y coordinate columns, where null means tag in a caption.
+* Upside is one single table for all mentions / tags.
+* Downside is that they're two different kinds of things.
+
+Tag solution #2:
+* Two tables: `photo_tags` and `caption_tags`.
+
+* Do you expect to query for `caption_tags` and `photo_tags` at different rates? If so, perhaps separate tables.
+* Will the meaning a `photo_tag` change at some point? If so, perhaps different tables.
