@@ -49,3 +49,61 @@ Tag solution #2:
 
 * Do you expect to query for `caption_tags` and `photo_tags` at different rates? If so, perhaps separate tables.
 * Will the meaning a `photo_tag` change at some point? If so, perhaps different tables.
+
+## Update for Tags
+
+Using dbdiagram.io: 
+```
+table users {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  username varchar(30)
+}
+
+table comments {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  contents varchar(240)
+  user_id integer [ref: > users.id]
+  post_id integer [ref: > posts.id]
+}
+
+table posts {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  url varchar(200)
+  user_id integer [ref: > users.id]
+  caption VARCHAR(240)
+  lat real
+  lng real
+}
+
+table likes {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  user_id integer [ref: > users.id]
+  post_id integer [ref: > posts.id]
+  comment_id integer [ref: > comments.id]
+}
+
+table photo_tags {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  updated_at timestamp
+  post_id integer [ref: > posts.id]
+  user_id integer [ref: > users.id]
+  x integer
+  y integer
+}
+
+table caption_tags {
+  id SERIAL [pk, increment]
+  created_at timestamp
+  post_id integer [ref: > posts.id]
+  user_id integer [ref: > users.id]
+}
+
+```
