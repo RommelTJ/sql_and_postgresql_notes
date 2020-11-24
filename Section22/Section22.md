@@ -35,3 +35,9 @@ Each block has a section for:
 * Location of items in block
 * Free space
 * Data for tuples in block
+
+## Heap File Layout
+
+[Documentation on Database Page Layout](https://www.postgresql.org/docs/current/storage-page-layout.html)
+
+To view binary data, you need a Hex Editor (VSCode plugin -> Hex Editor).
