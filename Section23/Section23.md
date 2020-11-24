@@ -38,3 +38,15 @@ CREATE INDEX ON users (username);
 ```postgresql
 DROP INDEX users_username_idx;
 ```
+
+## Benchmarking Queries
+
+```postgresql
+EXPLAIN ANALYZE SELECT * FROM users WHERE username = 'Emil30';
+```
+
+With Index:
+Planning Time: 0.088ms. Execution Time: 0.413ms.
+
+Without Index: 
+Planning Time: 0.177ms. Execution Time: 1.355ms. Over 3x slower.
