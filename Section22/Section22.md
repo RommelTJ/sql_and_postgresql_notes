@@ -15,3 +15,15 @@
 `SELECT oid, datname FROM pg_database;` shows database installed. There should be a folder with the same oid.
 
 `SELECT * FROM pg_class;` contains information about the files on disk.
+
+## Heaps, Blocks and Tuples
+
+Heap or Heap File:
+File that contains all the data (rows) of our table
+
+Tuple or Item:
+Individual row from the table
+
+Blocks or Page:
+The heap file is divided into many different 'blocks' or 'pages'. Each page/block stores some number of rows.
+Each block is 8kb in size.
