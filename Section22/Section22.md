@@ -27,3 +27,11 @@ Individual row from the table
 Blocks or Page:
 The heap file is divided into many different 'blocks' or 'pages'. Each page/block stores some number of rows.
 Each block is 8kb in size.
+
+## Block Data Layout
+
+Each block has a section for: 
+* Information about the block.
+* Location of items in block
+* Free space
+* Data for tuples in block
