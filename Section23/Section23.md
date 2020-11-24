@@ -64,3 +64,12 @@ Downsides:
 * Can be large! Stores data from at least one column of the real table
 * Slows down insert/update/delete. The index has to be updated!
 * Index might not actually get used!
+
+## Index Types
+
+* BTree Index (most common). General purpose index. 99% of the time you want this.
+* Hash. Speeds up simple equality checks.
+* GiST. Geometry, full-text search.
+* SP-GiST. Clustered data, such as dates. Many rows might have the same year.
+* GIN. For columns that contain arrays or JSON data.
+* BRIN. Specialized for really large datasets.
