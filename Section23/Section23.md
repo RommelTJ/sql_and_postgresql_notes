@@ -26,3 +26,9 @@ An index is a data structure that efficiently tells us what block/index a record
 5. Add helpers to Root Node, e.g. functions that help you determine which leaf node to go to.
 6. Search index.
 7. Go to Block / Index match in Heap File.
+
+## Creating an Index
+
+```postgresql
+CREATE INDEX ON users (username);
+```
