@@ -73,3 +73,14 @@ Downsides:
 * SP-GiST. Clustered data, such as dates. Many rows might have the same year.
 * GIN. For columns that contain arrays or JSON data.
 * BRIN. Specialized for really large datasets.
+
+## Automatically Generated Indexes
+
+* Postgres automatically creates an index for the primary key column of every table.
+* Postgres automatically creates an index for any 'unique' constraint.
+* These don't get listed under 'indexes' in pgAdmin!
+
+To show all the indexes in the database: 
+```postgresql
+SELECT relname, relkind FROM pg_class WHERE relkind = 'i';
+```
