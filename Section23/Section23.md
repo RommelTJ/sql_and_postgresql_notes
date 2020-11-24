@@ -84,3 +84,15 @@ To show all the indexes in the database:
 ```postgresql
 SELECT relname, relkind FROM pg_class WHERE relkind = 'i';
 ```
+
+## Behind the Scenes of Indexes
+
+Indexes also have 8kb pages, like Heap Files. They're also structured in the same manner.
+
+You can use an extension to inspect the indexes:
+```postgresql
+CREATE EXTENSION pageinspect;
+SELECT * FROM bt_metap('users_username_idx');
+SELECT * FROM bt_page_items('users_username_idx', 3);
+SELECT ctid, * FROM users WHERE username = 'Aaliyah.Hintz';
+```
