@@ -32,3 +32,9 @@ An index is a data structure that efficiently tells us what block/index a record
 ```postgresql
 CREATE INDEX ON users (username);
 ```
+
+## Dropping an Index
+
+```postgresql
+DROP INDEX users_username_idx;
+```
