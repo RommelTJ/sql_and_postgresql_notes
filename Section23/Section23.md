@@ -50,3 +50,17 @@ Planning Time: 0.088ms. Execution Time: 0.413ms.
 
 Without Index: 
 Planning Time: 0.177ms. Execution Time: 1.355ms. Over 3x slower.
+
+## Downsides of Indexes
+
+```postgresql
+SELECT pg_size_pretty(pg_relation_size('users_username_idx'));
+```
+
+Size of users table: 872 kB  
+Size of users_username_idx index: 184 kB
+
+Downsides: 
+* Can be large! Stores data from at least one column of the real table
+* Slows down insert/update/delete. The index has to be updated!
+* Index might not actually get used!
