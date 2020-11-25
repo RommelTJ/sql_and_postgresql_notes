@@ -39,3 +39,21 @@ Formula:
 `(#pages) * 1.0 + (#rows) * 0.01`  
 Thus:  
 `985 + 60410 * 0.01 = 1589.1`, 1589.1 is the same number estimated by `EXPLAIN ANALYZE`.
+
+## A Touch More on Costs
+
+See Planner Cost Constants in PosgreSQL documentation.
+
+Cost =  
+`(# pages read sequentially) * seq_page_cost`  
++ `(# pages read at random) * random_page_cost`  
++ `(# rows scanned) * cpu_tuple_cost`  
++ `(# index entries scanned) * cpu_index_tuple_cost`  
++ `(# times function/operator evaluated) * cpu_operator_cost`  
+
+Cost is relative to sequential page cost.  
+* random_page_cost = 4.0
+* seq_page_cost = 1.0
+* cpu_tuple_cost = .01
+* cpu_index_tuple_cost = .005
+* cpu_operator_cost = .0025
