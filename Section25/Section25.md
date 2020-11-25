@@ -67,3 +67,7 @@ The second number is the cost for this step to produce all rows.
 
 If startup cost is lower than total cost, it means we can start parallel processing records. If it's the same, all rows 
 have to be processed before passing on the results.  
+
+## Costs Flow Up
+
+The costs of a parent node are the sum of the costs of all its child nodes.  
