@@ -20,3 +20,16 @@ Build a query plan, run it, and display info about it.
 These are for benchmarking and evaluating queries, not for use in real data fetching.
 
 PGAdmin also has a built in feature.
+
+## Solving an Explain Mystery
+
+* Arrows are query nodes. Steps for accessing data or doing processing.
+* Start from the inner-most node.
+* Result of the query nodes passes up to the parent nodes.
+* Hash Join is combining the output. This is the final result.
+
+Even without `ANALYZE`, `EXPLAIN` can guess how many rows and width in bytes is going to retrieve.  
+Postgres keeps detailed statistics that it can use to determine this.
+```postgresql
+SELECT * FROM pg_stats WHERE tablename = 'users';
+```
