@@ -24,3 +24,18 @@ Let's assume that loading a random page of data takes 4 times longer than loadin
 Query Plan 1 = (2 pages * 4) = 8    
 Query Plan 2 = (100 pages * 1) = 100  
 Thus, Query Plan 1 is better.  
+
+## Calculating Cost by Hand
+
+Fetch all comments sequentially:  
+` ->  Seq Scan on comments  (cost=0.00..1589.10 rows=60410 width=72) (actual time=0.010..10.512 rows=60410 loops=1)"`
+
+* Open the comments heap file
+* Load all comments from the first block
+* Process each comment in some way (60410 rows)
+* Repeat the process for the next block (985 pages)
+
+Formula:   
+`(#pages) * 1.0 + (#rows) * 0.01`  
+Thus:  
+`985 + 60410 * 0.01 = 1589.1`, 1589.1 is the same number estimated by `EXPLAIN ANALYZE`.
