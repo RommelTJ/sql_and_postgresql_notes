@@ -57,3 +57,13 @@ Cost is relative to sequential page cost.
 * cpu_tuple_cost = .01
 * cpu_index_tuple_cost = .005
 * cpu_operator_cost = .0025
+
+## Startup vs Total Costs
+
+Why do we see 2 numbers in cost, i.e. `cost=0.00..1589.10`?
+
+The first number is the cost to produce the first row.  
+The second number is the cost for this step to produce all rows. 
+
+If startup cost is lower than total cost, it means we can start parallel processing records. If it's the same, all rows 
+have to be processed before passing on the results.  
