@@ -54,3 +54,12 @@ JOIN users ON users.id = suggestions.leader_id
 WHERE depth > 1
 LIMIT 30;
 ```
+
+## Walking through recursion
+
+1. Define the results and the working tables
+2. Run the initial non-recursive statement. Put results into working table and results table.
+3. Run the recursive statement (As a mental aid, replace "suggestions" as "WORKING TABLE"). 
+Put the results into the results table.
+4. If recursive statement returns some rows, append them to the results table and run recursion again.
+5. If recursive statement returns no rows, stop the recursion.
