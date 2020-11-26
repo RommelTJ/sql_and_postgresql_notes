@@ -59,3 +59,19 @@ CREATE VIEW recent_posts AS (
 
 SELECT * FROM recent_posts;
 ```
+
+## Deleting and Changing Views
+
+Updating an existing view:  
+```postgresql
+CREATE OR REPLACE VIEW recent_posts AS (
+  SELECT * FROM posts ORDER BY created_at DESC LIMIT 15
+);
+
+SELECT * FROM recent_posts;
+```
+
+Deleting a view: 
+```postgresql
+DROP VIEW recent_posts;
+```
