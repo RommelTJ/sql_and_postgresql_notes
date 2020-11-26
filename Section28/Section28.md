@@ -48,3 +48,14 @@ JOIN tags ON (tags.user_id = users.id)
 GROUP BY users.username
 ORDER BY COUNT(*) DESC;
 ```
+
+## When to use a view?
+
+Show the 10 most recent posts:  
+```postgresql
+CREATE VIEW recent_posts AS (
+  SELECT * FROM posts ORDER BY created_at DESC LIMIT 10
+);
+
+SELECT * FROM recent_posts;
+```
