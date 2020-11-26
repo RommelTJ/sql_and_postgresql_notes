@@ -18,4 +18,18 @@ CREATE TABLE accounts(
 INSERT INTO accounts(name, balance) VALUES ('Gia', 100), ('Alyson', 100);
 
 SELECT * FROM accounts;
+
+-- A Transaction
+BEGIN;
+UPDATE accounts SET balance = balance - 50 WHERE name = 'Alyson';
+UPDATE accounts SET balance = balance + 50 WHERE name = 'Gia';
+COMMIT; -- Finishing the Transaction
 ```
+
+`COMMIT`: Merge changes back into main data pool.  
+`ROLLBACK`: Dump all pending changes and delete the separate workspace.  
+
+If a connection runs into an ERROR, the transactions enters into an 'aborted' state - 
+you must rollback!
+
+If we lose a connection (crashing), Postgres will automatically rollback the transaction.
