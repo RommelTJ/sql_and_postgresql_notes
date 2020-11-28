@@ -13,3 +13,8 @@ of our database to our code.
 Schema Migration File:   
 Code that describes a precise change to make to the database.  
 They have an Apply (Up) and a Revert (Down) operation.  
+
+## Issues Solved by Migrations
+
+* Migration files let you automatically apply migrations during API deployments.
+* Migration files let you sync the database for code review.
