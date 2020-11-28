@@ -18,3 +18,7 @@ They have an Apply (Up) and a Revert (Down) operation.
 
 * Migration files let you automatically apply migrations during API deployments.
 * Migration files let you sync the database for code review.
+
+## A Few Notes on Migration Libraries
+
+Many libraries for many languages.
