@@ -22,3 +22,11 @@ Should we do everything in a single migration or split over separate migrations?
 3. But our API server is currently running with the current schema. 
 4. Our transaction completes, but what about what was inserted in the meantime? 
 5. We lose data (probably turns into null values) that happened between steps 2 and 4.
+
+## Properly Running Data and Schema Migrations
+
+* Add column loc
+* Deploy new version of API that will write values to both lat/lng and loc
+* Copy lat/lng to loc
+* Update code to only write to loc column
+* Drop columns lat/lng
