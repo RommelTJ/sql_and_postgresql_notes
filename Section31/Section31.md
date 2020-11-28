@@ -1,3 +1,9 @@
 # Managing Database Design with Schema Migrations
 
 ## A Story on Migrations
+
+Big Lessons: 
+1. Changes to the DB structure and changes to clients need to be made at precisely 
+the same time.
+2. When working with other engineers, we need a really easy way to tie the structure
+of our database to our code.
