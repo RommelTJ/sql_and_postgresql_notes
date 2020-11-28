@@ -1,6 +1,6 @@
 # sql_and_postgresql_notes
 
-Version: 0.0.33 - 28 Nov 2020
+Version: 0.0.34 - 28 Nov 2020
 
 ## Description
 
