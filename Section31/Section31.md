@@ -7,3 +7,9 @@ Big Lessons:
 the same time.
 2. When working with other engineers, we need a really easy way to tie the structure
 of our database to our code.
+
+## Migration Files
+
+Schema Migration File:   
+Code that describes a precise change to make to the database.  
+They have an Apply (Up) and a Revert (Down) operation.  
