@@ -45,3 +45,11 @@ Specifying a test schema:
 SET search_path TO test, public;
 SELECT * FROM users; -- defaults to test.users
 ```
+
+## Strategy for Isolation
+
+* Connect to Postgres as normal
+* Generate a random string of characters
+* Create a new user (role) with that name
+* Create a new schema with that name
+* Tell our test file to connect to the DB with that name
