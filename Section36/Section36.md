@@ -13,3 +13,19 @@ Main issue with testing:
 * Schemas are like folders to organize things in a database
 * Every database gets a default schema called 'public'
 * Each schema can have its own separate copy of a table
+
+## Creating and Accessing Schemas
+
+```postgresql
+CREATE SCHEMA test;
+```
+
+Creating a users table in test schema: 
+```postgresql
+CREATE TABLE test.users(
+  id SERIAL PRIMARY KEY,
+  username VARCHAR
+);
+
+INSERT INTO test.users (username) VALUES ('JohnDoe'), ('alex');
+```
